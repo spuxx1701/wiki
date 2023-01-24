@@ -1,4 +1,4 @@
-# Ember - Building applicationsa
+# Ember - Building applications
 
 ## Fingerprinting
 Fingerprinting is the process of hashing assets during the build process so that browsers will recognize them as new, thus not using their cache.

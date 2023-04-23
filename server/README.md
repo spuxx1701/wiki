@@ -9,7 +9,8 @@ sudo adduser leo
 usermod -aG sudo leo
 ```
 
-### Create and upload ssh key
+### Setup SSH connection
+
 On your local machine, create a new ssh key pair.
 
 ```bash
@@ -21,7 +22,13 @@ Choose a name (e.g. the server name) and a passphrase. Then upload the public ke
 ssh-copy-id -i ~/.ssh/server_name leo@server_ip_adress
 ```
 
-Now, add the server to your `~/.ssh/config`:
+Now, add the SSH private key to your local SSH agent:
+
+```bash
+ssh-add ~/.ssh/server_name
+```
+
+Finally, add the server to your `~/.ssh/config`:
 
 ```bash
 Host server_name
@@ -29,3 +36,5 @@ Host server_name
     User leo
     IdentityFile ~/.ssh/server_name
 ```
+
+You can now connect to the remote host via `ssh server_name`.

@@ -33,7 +33,7 @@ microk8s start
 microk8s status
 # Get a lot more details (may help in case of errors)
 microk8s inspect
-``` 
+```
 
 With microk8s running, we can enable some basic services.
 
@@ -43,4 +43,10 @@ microk8s enable hostpath-storage # Allows storing files on the host system
 microk8s enable cert-manager # Enables cert-manager for certificate management
 microk8s enable helm # Enables helm package manager
 microk8s enable ingress # Enables the NGINX ingress controller
+```
+
+Now make the server listen to Microk8s' API server port.
+
+```bash
+sudo ufw allow 16443/tcp
 ``` 

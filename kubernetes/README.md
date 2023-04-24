@@ -20,5 +20,7 @@ sudo apt install snapd
 With snapd, you can then install Microk8s:
 
 ```bash
-bla
+# On debian, you might need to install 'core' first
+sudo snap install core
+sudo snap install microk8s
 ```
